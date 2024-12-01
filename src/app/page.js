@@ -1,10 +1,13 @@
+import Banner from "@/components/banner/Banner";
+import Card from "@/components/shared/Card";
 
 
 
 export default function Home() {
   return (
     <div>
-      <h1>This home page</h1>
+      <Banner></Banner>
+      <Card></Card>
     </div>
   );
 }

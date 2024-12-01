@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function NavBar() {
     return (
-        <div className="navbar bg-amber-400">
+        <div className="navbar bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -35,13 +35,11 @@ export default function NavBar() {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <Link href={"/"}>
-                    <div className="flex">
-                        <Image alt='logo' src="/assets/banner.jpg" height={60} width={60}></Image>
-                        <h1><span className='text-stone-50'>Shaja</span> <br></br>-s-Oud</h1>
-
-                    </div>
-                </Link>
+                <div>
+                    <Link href={"/"}>
+                        <Image alt='logo' src="/assets/logo.jpg" height={60} width={60}></Image>
+                    </Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -59,7 +57,7 @@ export default function NavBar() {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-warning">Button</a>
+                <a className="btn">Button</a>
             </div>
         </div>
     )
