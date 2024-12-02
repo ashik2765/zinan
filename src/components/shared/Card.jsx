@@ -5,8 +5,8 @@ export default function Card() {
     const products = [
         {
             "id": 1,
-            "name": "Organic Honey Combo - Pack of 4",
-            "description": "A selection of four distinct and natural honey flavors.",
+            "name": "ওউদ ধূপকাঠি বা বখুর স্টিক",
+            "description": "🌿 বিশুদ্ধ ঘ্রাণ🕌 আধ্যাত্মিক প্রশান্তি🏡 ঘরের সৌন্দর্য বাড়াতে অনন্য",
             "image": "/assets/products/product1.jpg",
             "price": {
                 "original": 1950,
@@ -24,8 +24,8 @@ export default function Card() {
         },
         {
             "id": 2,
-            "name": "Premium Almond Butter",
-            "description": "Creamy and rich almond butter made from 100% natural almonds.",
+            "name": "আতর - খাঁটি সৌরভের স্পর্শ",
+            "description": "🌸 দীর্ঘস্থায়ী ঘ্রাণ🌿 খাঁটি ও অ্যালকোহলমুক্ত✨ প্রতিদিনের ব্যবহার ও উপহার দেওয়ার জন্য আদর্শ.",
             "image": "/assets/products/product2.jpg",
             "price": {
                 "original": 850,
@@ -42,8 +42,8 @@ export default function Card() {
         },
         {
             "id": 3,
-            "name": "Handmade Organic Soap",
-            "description": "Gentle and natural soap bars crafted for all skin types.",
+            "name": "বাখুর স্টিকে",
+            "description": "মান ও ঘ্রানে ১০০%নিশ্চয়তা পাবেন আমাদের বাখুর স্টিকে,, তাই জলদি অর্ডার করে ফেলুন,,আপনার ফোন নং, ঠিকানা দিয়ে,, ইনবক্স করে ফেলে এখনি",
             "image": "/assets/products/product3.jpg",
             "price": {
                 "original": 400,
@@ -59,8 +59,8 @@ export default function Card() {
         },
         {
             "id": 4,
-            "name": "Herbal Green Tea Pack",
-            "description": "Refreshing and detoxifying herbal green tea for daily wellness.",
+            "name": "এরাবিয়ান মুখাল্লাত রৌজ",
+            "description": "যাদের চন্দন, রৌজ ফ্লেভার পছন্দ তাদের জন্য সবচেয়ে বেস্ট একটি আতর। পেইজের কাস্টমার রিভিউ কমেন্ট দেখেন বুঝতে পারবেন।",
             "image": "/assets/products/product4.jpg",
             "price": {
                 "original": 600,
@@ -80,8 +80,8 @@ export default function Card() {
 
     return (
         <div>
-            <div>
-                <h1>Our Product</h1>
+            <div className='my-5'>
+            <h1 className="text-center text-2xl font-bold">Our Products</h1>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 mx-auto gap-5'>
                 {
