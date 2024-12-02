@@ -97,7 +97,11 @@ export default function Card() {
                                     className="w-full h-full object-cover"
                                 />
                                 {product.badges?.map((badge, i) => (
-                                    <div key={i} className={`absolute top-${i * 2 + 2} left-2 bg-${badge.color}-500 text-white text-xs font-bold px-2 py-1 rounded-md`}>
+                                    <div
+                                        key={i}
+                                        style={{backgroundColor: badge.color, top: `${i * 2 + 2}rem` }}
+                                        className={`absolute left-2 bg-${badge.color}-500 text-white text-xs font-bold px-2 py-1 rounded-md`}
+                                    >
                                         {badge.label}
                                     </div>
                                 ))}
@@ -120,10 +124,14 @@ export default function Card() {
 
                             {/* Action Buttons */}
                             <div className="flex gap-2 p-4">
-                                {product.actions.map((action, i) => (
+                                {product?.actions.map((action, i) => (
                                     <button
                                         key={i}
-                                        className={`flex-1 bg-${action.color}-600 text-white text-sm font-semibold py-2 rounded-md hover:bg-${action.color}-700 transition-colors`}
+                                        style={{
+                                            backgroundColor: action.color,
+                                            color: 'white',
+                                        }}
+                                        className="flex-1 text-sm font-semibold py-2 rounded-md hover:opacity-90 transition-opacity"
                                     >
                                         {action.label}
                                     </button>
