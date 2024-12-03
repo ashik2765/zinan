@@ -1,3 +1,4 @@
+import SocialLogin from '@/components/shared/SocialLogin'
 import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
@@ -63,6 +64,17 @@ export default function Page() {
                             Sign In
                         </button>
                     </form>
+
+                    <div className="mt-6 relative">
+                        <div className="absolute inset-0 flex items-center">
+                            <div className="w-full border-t border-gray-300"></div>
+                        </div>
+                        <div className="relative flex justify-center text-sm">
+                            <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                        </div>
+                    </div>
+                    <SocialLogin />
+
                     <p className="mt-6 text-center text-sm text-gray-600">
                         Do not have an account?{" "}
                         <Link
