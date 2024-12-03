@@ -74,7 +74,7 @@ export default function NavBar() {
                 <div className=' flex items-center space-x-5'>
                     <Link href="/"><FaShoppingCart className="text-2xl text-blue-600" /></Link>
                     <IoIosSearch className="text-2xl text-blue-600" />
-                    <FaUser className="text-2xl text-blue-600" />
+                    <Link href="login"><FaUser className="text-2xl text-blue-600" /></Link>
                 </div>
             </div>
         </div>
