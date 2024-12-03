@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import React from 'react'
 
 export default function Page() {
@@ -64,12 +65,12 @@ export default function Page() {
                     </form>
                     <p className="mt-6 text-center text-sm text-gray-600">
                         Do not have an account?{" "}
-                        <a
-                            href="#"
+                        <Link
+                            href="/signUp"
                             className="text-indigo-600 hover:text-indigo-500 font-medium"
                         >
                             Sign Up
-                        </a>
+                        </Link>
                     </p>
                 </div>
             </div>
