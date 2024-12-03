@@ -1,9 +1,14 @@
+"use client"
 import SocialLogin from '@/components/shared/SocialLogin'
 import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
 
 export default function Page() {
+    const handleLogin = (e) => {
+        e.preventDefault();
+        console.log("cliked login button")
+    }
     return (
         <div>
             <Head>
@@ -14,7 +19,7 @@ export default function Page() {
                     <h2 className="text-2xl font-semibold text-gray-800 text-center mb-6">
                         Welcome Back
                     </h2>
-                    <form className="space-y-4">
+                    <form onSubmit={handleLogin} className="space-y-4">
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                                 Email Address
