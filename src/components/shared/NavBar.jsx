@@ -1,8 +1,28 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { IoIosSearch } from "react-icons/io";
 
 export default function NavBar() {
+    const navItems = [
+        {
+            title: "Home",
+            path: "/"
+        },
+        {
+            title: "Shop",
+            path: "/shop"
+        },
+        {
+            title: "Blog",
+            path: "/blog"
+        },
+        {
+            title: "About Us",
+            path: "/about"
+        },
+    ]
     return (
         <div className="navbar bg-blue-100">
             <div className="navbar-start">
@@ -24,40 +44,38 @@ export default function NavBar() {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
-                        <li>
-                            <a>Parent</a>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </li>
-                        <li><a>Item 3</a></li>
+                        <div className="flex flex-col gap-5">
+                            {
+                                navItems.map((item) => (
+                                    <Link className="font-semibold hover:text-primary duration-300" href={item.path} key={item.path}>{item.title}</Link>
+                                ))
+                            }
+                        </div>
                     </ul>
                 </div>
                 <div>
                     <Link href={"/"}>
-                        <Image alt='logo' src="/assets/logo.jpg" height={60} width={60}></Image>
+                        <Image alt='logo' src="/assets/logo.svg" height={60} width={60}></Image>
                     </Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
-                    <li><a>Item 1</a></li>
-                    <li>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul className="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li><a>Item 3</a></li>
-                </ul>
+
+                <div className="flex items-center space-x-6">
+                    {
+                        navItems.map((item) => (
+                            <Link className="font-semibold hover:text-primary duration-300" href={item.path} key={item.path}>{item.title}</Link>
+                        ))
+                    }
+                </div>
+
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <div className=' flex items-center space-x-5'>
+                    <Link href="/"><FaShoppingCart className="text-2xl text-blue-600" /></Link>
+                    <IoIosSearch className="text-2xl text-blue-600" />
+                    <FaUser className="text-2xl text-blue-600" />
+                </div>
             </div>
         </div>
     )
