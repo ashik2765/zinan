@@ -11,6 +11,7 @@ const getProductsData = async () => {
 const Products = async () => {
     const productsData = await getProductsData();
     const products = productsData.products
+
     return (
         <div>
             <div className="my-5">
