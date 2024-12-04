@@ -44,7 +44,7 @@ export default function Card({ product }) {
 
 
             {/* Action Buttons */}
-            <Link href={`/products/${product._id}`}>
+            <a href={`/products/${product._id}`}>
                 <div className="flex gap-2 p-4">
                     {product?.actions.map((action, i) => (
                         <button
@@ -60,7 +60,7 @@ export default function Card({ product }) {
 
                     ))}
                 </div>
-            </Link>
+            </a>
         </div >
 
     )
