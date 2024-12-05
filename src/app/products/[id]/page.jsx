@@ -19,7 +19,7 @@ const DetailsPage = async ({ params }) => {
     const product = productDetails?.product;
 
     return (
-        <div className="font-sans container mx-auto">
+        <div className="font-sans mx-auto">
             <section
                 className="relative w-full h-64 bg-no-repeat bg-cover bg-center"
                 style={{
@@ -34,7 +34,7 @@ const DetailsPage = async ({ params }) => {
                 </div>
             </section>
 
-            <main className="container mx-auto my-10 p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <main className="mx-auto my-10 p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Left Content */}
                 <div className="md:col-span-2 space-y-6">
                     <Image src={product?.image} alt="Product Image" width={400} height={300} className="rounded-lg" />
@@ -43,7 +43,7 @@ const DetailsPage = async ({ params }) => {
 
                     <div className="grid grid-cols-2 gap-4">
                         {products?.map((item, index) => (
-                            <div key={index} className="p-4 border border-red-500 rounded-lg">
+                            <div key={index} className=" flex flex-row p-4 border border-red-500 rounded-lg">
                                 <h4 className="font-semibold">{item?.name}</h4>
                                 <p className="text-gray-500">{item?.description}.</p>
                             </div>
