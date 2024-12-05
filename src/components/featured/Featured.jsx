@@ -1,5 +1,8 @@
-import Image from 'next/image';
-import React from 'react'
+"use client";
+import Image from "next/image";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Featured() {
     const featuredProducts = [
@@ -7,28 +10,36 @@ export default function Featured() {
             id: 1,
             name: "Wireless Earbuds",
             price: "$59.99",
-            image: "/images/earbuds.jpg", // Replace with your image path
+            image: "/assets/products/product2.jpg", // Replace with your image path
             description: "Crystal-clear sound with noise cancellation.",
         },
         {
             id: 2,
             name: "Smartwatch",
             price: "$129.99",
-            image: "/images/smartwatch.jpg", // Replace with your image path
+            image: "/assets/products/product2.jpg", // Replace with your image path
             description: "Track your fitness and stay connected on the go.",
         },
         {
             id: 3,
             name: "Gaming Mouse",
             price: "$49.99",
-            image: "/images/mouse.jpg", // Replace with your image path
+            image: "/assets/products/product2.jpg", // Replace with your image path
             description: "High precision and ergonomic design for gamers.",
         },
     ];
+    useEffect(() => {
+        AOS.init({
+            offset: 120,
+            duration: 600,
+            easing: "ease",
+            once: true,
+        });
+    }, []);
 
     return (
-        <section id="featured" className="py-12 bg-white">
-            <div className="container mx-auto px-4">
+        <section id="featured" className="py-12">
+            <div data-aos="flip-right" className="container mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
                     Featured Products
                 </h2>
@@ -36,13 +47,13 @@ export default function Featured() {
                     {featuredProducts.map((product) => (
                         <div
                             key={product.id}
-                            className="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                            className="bg-white border border-gray-300 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                         >
                             <Image
                                 src={product.image}
                                 alt={product.name}
-                                width={90}
-                                height={48}
+                                width={400}
+                                height={40}
                                 className="object-cover rounded-md mb-4"
                             />
                             <h3 className="text-lg font-semibold text-gray-700 mb-2">

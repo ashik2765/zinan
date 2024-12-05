@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "mongodb": "^6.11.0",
     "next": "15.0.3",
     "next-auth": "^4.24.10",

@@ -19,8 +19,8 @@ const Products = async () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 mx-auto gap-5">
                 {
-                    products.map((product) => (
-                        <Card product={product} key={product.id} />
+                    products.map((product, index) => (
+                        <Card product={product} key={product.id} animation={index % 3 === 0 ? "fade-left" : index % 3 === 1 ? "fade-up" : "fade-right"} />
                     ))
                 }
             </div>

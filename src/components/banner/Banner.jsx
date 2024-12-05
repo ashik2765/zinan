@@ -1,6 +1,17 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function Banner() {
+  useEffect(() => {
+    AOS.init({
+      offset: 120,
+      duration: 600,
+      easing: "ease",
+      once: true,
+    });
+  }, []);
   const banners = [
     {
       title: "Agar agar",
@@ -28,7 +39,7 @@ export default function Banner() {
     },
   ]
   return (
-    <div className="container mx-auto">
+    <div data-aos="zoom-in" className="container mx-auto">
       <div className="carousel w-full mt-10">
         {banners.map((banner, index) => (
           <div

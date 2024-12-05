@@ -10,8 +10,8 @@ export default function HomePage() {
     <div>
       <Banner></Banner>
       <Products></Products>
-      {/* <Featured></Featured> */}
-      {/* <Review></Review> */}
+      <Featured></Featured>
+      <Review></Review>
     </div>
   )
 }
