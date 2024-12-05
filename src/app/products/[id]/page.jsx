@@ -3,6 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+export const metadata = {
+    title: "Details",
+    description: "Product Details Page"
+}
+
 // Fetch product details
 const getProductDetails = async (id) => {
     const res = await fetch(`${process.env.BASE_URL}/products/api/${id}`);
@@ -34,16 +39,16 @@ const DetailsPage = async ({ params }) => {
                 </div>
             </section>
 
-            <main className="mx-auto my-10 p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <main className="mx-auto my-10 grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* Left Content */}
-                <div className="md:col-span-2 space-y-6">
+                <div className="md:col-span-2 p-4 md:p-0 space-y-6">
                     <Image src={product?.image} alt="Product Image" width={400} height={300} className="rounded-lg" />
                     <h3 className="text-2xl font-bold">{product?.name}</h3>
                     <p className="text-gray-700">{product?.description}</p>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {products?.map((item, index) => (
-                            <div key={index} className=" flex flex-row p-4 border border-red-500 rounded-lg">
+                            <div key={index} className=" flex flex-col  p-4 border border-red-500 rounded-lg">
                                 <h4 className="font-semibold">{item?.name}</h4>
                                 <p className="text-gray-500">{item?.description}.</p>
                             </div>
@@ -51,7 +56,7 @@ const DetailsPage = async ({ params }) => {
                     </div>
 
                     <h4 className="text-xl font-bold mt-8">Delivery Process</h4>
-                    <div className="grid grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         {['STEP ONE', 'STEP TWO', 'STEP THREE'].map((step, index) => (
                             <div key={step} className="p-4 text-center border rounded-lg">
                                 <div className="text-3xl font-bold text-red-500">{index + 1}</div>
