@@ -43,9 +43,11 @@ export default function Banner() {
               <div className="text-white">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">{banner.title}</h1>
                 <p className="text-sm md:text-base lg:text-lg">{banner.description}</p>
-                <div className="flex flex-col md:flex-row mt-5 md:mt-10">
+                <div className="flex flex-col md:flex-row mt-5 md:mt-10 pe-5">
                   <button className="btn btn-md btn-primary">Discover More</button>
-                  <button className="btn btn-md btn-primary btn-outline md:ms-5 mt-2 md:mt-0">Latest Projects</button>
+                  <button className="btn btn-primary btn-outline hidden md:block md:ms-5 mt-2 md:mt-0">
+                    Latest Projects
+                  </button>
                 </div>
               </div>
             </div>

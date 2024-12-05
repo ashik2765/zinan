@@ -7,9 +7,9 @@ export default function Footer() {
             <aside>
                 <Image alt='Logo' src="/assets/logo.svg" height={60} width={60}></Image>
                 <p>
-                    ACME Industries Ltd.
+                    SHAJA S OUD
                     <br />
-                    Providing reliable tech since 1992
+                    Providing reliable product since 2020
                 </p>
             </aside>
             <nav>

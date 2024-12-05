@@ -5,7 +5,7 @@ import React from 'react'
 export default function Card({ product }) {
 
     return (
-        <div className="max-w-sm w-full h-[450px] mx-auto border border-gray-300 rounded-lg shadow-lg bg-white overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <div className="w-full h-[450px] mx-auto border border-gray-300 rounded-lg shadow-lg bg-white overflow-hidden hover:shadow-xl transition-shadow duration-300">
             {/* Product Image */}
 
             <div className="relative h-60">
@@ -45,7 +45,7 @@ export default function Card({ product }) {
 
             {/* Action Buttons */}
             <a href={`/products/${product._id}`}>
-                <div className="flex gap-2 p-4">
+                <div className="flex gap-2 px-2">
                     {product?.actions.map((action, i) => (
                         <button
                             key={i}
