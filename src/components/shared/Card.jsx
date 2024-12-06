@@ -13,26 +13,26 @@ export default function Card({ product, animation }) { // Accept animation as a 
       once: true,
     });
   }, []);
-  
+
   //button action
-  const handleAction = (action) => {
-    switch (action.type) {
-      case "addToCart":
-        console.log("Adding to cart", action.payload);
-        // Add your logic here
-        break;
-      case "buyNow":
-        console.log("Buying now", action.payload);
-        // Add your logic here
-        break;
-      case "wishlist":
-        console.log("Adding to wishlist", action.payload);
-        // Add your logic here
-        break;
-      default:
-        console.log("Unknown action", action);
-    }
-  };
+  // const handleAction = (action) => {
+  //   switch (action.type) {
+  //     case "addToCart":
+  //       console.log("Adding to cart", action.payload);
+  //       // Add your logic here
+  //       break;
+  //     case "buyNow":
+  //       console.log("Buying now", action.payload);
+  //       // Add your logic here
+  //       break;
+  //     case "wishlist":
+  //       console.log("Adding to wishlist", action.payload);
+  //       // Add your logic here
+  //       break;
+  //     default:
+  //       console.log("Unknown action", action);
+  //   }
+  // };
 
   return (
     <div
@@ -76,9 +76,9 @@ export default function Card({ product, animation }) { // Accept animation as a 
         </div>
       </a>
       {/* Action Buttons */}
-
-      <div className="flex gap-2 px-2">
-        {product?.actions.map((action, i) => (
+      <a href={`/products/${product._id}`}>
+        <div className="flex gap-2 px-2">
+          {/* {product?.actions.map((action, i) => (
           <button
             key={i}
             style={{
@@ -90,9 +90,15 @@ export default function Card({ product, animation }) { // Accept animation as a 
           >
             {action.label}
           </button>
-        ))}
-      </div>
+        ))} */}
 
+          <button className="flex-1 text-sm font-semibold py-2 rounded-md hover:opacity-90 transition-opacity text-white bg-blue-600">
+
+            View Details
+
+          </button>
+        </div>
+      </a>
     </div>
   );
 }

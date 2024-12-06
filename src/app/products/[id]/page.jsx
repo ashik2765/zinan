@@ -54,6 +54,12 @@ const DetailsPage = async ({ params }) => {
                             </div>
                         ))}
                     </div>
+                    <div className="p-6 bg-white border rounded-lg">
+                        <span className="text-green-600 text-lg font-bold ml-2">Price: {product.price.discounted}৳</span>
+                        <Link href={`/checkout/${product?._id}`}>
+                            <button className="mt-4 w-full py-2 text-white bg-blue-600 hover:bg-blue-700 duration-300 rounded-md">অর্ডার করুন</button>
+                        </Link>
+                    </div>
 
                     <h4 className="text-xl font-bold mt-8">Delivery Process</h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -99,12 +105,12 @@ const DetailsPage = async ({ params }) => {
                         </a>
                     </div>
 
-                    <div className="p-6 bg-white border rounded-lg">
+                    {/* <div className="p-6 bg-white border rounded-lg">
                         <span className="text-green-600 text-lg font-bold ml-2">Price: {product.price.discounted}৳</span>
                         <Link href={`/checkout/${product?._id}`}>
                             <button className="mt-4 w-full py-2 text-white bg-blue-600 hover:bg-blue-700 duration-300 rounded-md">Proceed Checkout</button>
                         </Link>
-                    </div>
+                    </div> */}
                 </aside>
             </main>
         </div>
