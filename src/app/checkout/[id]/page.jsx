@@ -15,11 +15,12 @@ export default function CheckoutPage() {
         address: "",
         phone: "",
     });
+    console.log("from production",id)
 
     useEffect(() => {
         const fetchCartItems = async () => {
             try {
-                const response = await fetch(`${process.env.BASE_URL}/checkout/api/products`);
+                const response = await fetch("https://zinan.vercel.app/checkout/api/products");
                 if (response.ok) {
                     const data = await response.json();
 
