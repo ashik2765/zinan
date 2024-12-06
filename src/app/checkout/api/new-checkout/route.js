@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export const POST = async (request) => {
     const checkoutData = await request.json();
     const database = await connectDB();
-    const checkoutCollection = database.collection("checkout");
+    const checkoutCollection = database.collection("orders");
     
     try {
         const result = await checkoutCollection.insertOne(checkoutData);

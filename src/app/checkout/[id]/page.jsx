@@ -1,11 +1,13 @@
 'use client';
 
 import { useParams, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function CheckoutPage() {
     const { id } = useParams(); // Get `id` from the URL
     const router = useRouter();
+    const [cartItems, setCartItems] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -14,10 +16,36 @@ export default function CheckoutPage() {
         phone: "",
     });
 
-    const [cartItems] = useState([
-        { id: 1, name: "Product A", price: 200, quantity: 2 },
-        { id: 2, name: "Product B", price: 150, quantity: 1 },
-    ]);
+    useEffect(() => {
+        const fetchCartItems = async () => {
+            try {
+                const response = await fetch("http://localhost:3000/checkout/api/products");
+                if (response.ok) {
+                    const data = await response.json();
+
+                    // Use the `find` method to get the product that matches the ID
+                    const product = data.find(item => item._id === id);
+                    if (product) {
+                        // Adding default quantity of 1 to the product
+                        setCartItems([{
+                            ...product,
+                            quantity: 1, // Default quantity
+                        }]);
+                    } else {
+                        console.error("Product not found");
+                    }
+                } else {
+                    console.error("Failed to fetch cart items:", response.statusText);
+                }
+            } catch (error) {
+                console.error("Error fetching cart items:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCartItems();
+    }, [id]);
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -50,7 +78,11 @@ export default function CheckoutPage() {
     };
 
     const calculateTotal = () =>
-        cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+        cartItems.reduce((total, item) => total + (item?.price?.discounted * item.quantity), 0);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="container mx-auto p-4">
@@ -136,7 +168,7 @@ export default function CheckoutPage() {
                                 className="flex justify-between border-b pb-2 last:border-none"
                             >
                                 <span>{item.name} (x{item.quantity})</span>
-                                <span>${item.price * item.quantity}</span>
+                                <span>${item?.price?.discounted * item.quantity}</span>
                             </li>
                         ))}
                     </ul>
