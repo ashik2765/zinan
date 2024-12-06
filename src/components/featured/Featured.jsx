@@ -39,7 +39,7 @@ export default function Featured() {
 
     return (
         <section id="featured" className="py-12">
-            <div data-aos="flip-right" className="container mx-auto">
+            <div data-aos="fade-up" className="container mx-auto">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
                     Featured Products
                 </h2>

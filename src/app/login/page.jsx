@@ -5,10 +5,12 @@ import Link from 'next/link'
 import React from 'react'
 
 export default function Page() {
+
     const handleLogin = (e) => {
         e.preventDefault();
         console.log("cliked login button")
     }
+
     return (
         <div>
             <Head>

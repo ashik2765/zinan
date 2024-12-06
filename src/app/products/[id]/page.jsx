@@ -100,8 +100,10 @@ const DetailsPage = async ({ params }) => {
                     </div>
 
                     <div className="p-6 bg-white border rounded-lg">
-                        <p className="text-2xl font-bold">Price</p>
-                        <button className="mt-4 w-full py-2 text-white bg-blue-600 hover:bg-blue-700 duration-300 rounded-md">Proceed Checkout</button>
+                        <span className="text-gray-400 line-through text-sm">{product.price.original}৳</span>
+                        <Link href={`/checkout/${product?._id}`}>
+                            <button className="mt-4 w-full py-2 text-white bg-blue-600 hover:bg-blue-700 duration-300 rounded-md">Proceed Checkout</button>
+                        </Link>
                     </div>
                 </aside>
             </main>
