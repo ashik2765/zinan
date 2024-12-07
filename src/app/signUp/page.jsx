@@ -17,7 +17,7 @@ export default function Page() {
             email,
             password
         }
-        const res = await fetch('http://localhost:3000/signUp/api', {
+        const res = await fetch(`${process.env.BASE_URL}/signUp/api`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
