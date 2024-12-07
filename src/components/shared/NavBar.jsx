@@ -83,7 +83,7 @@ export default function NavBar() {
                     {!session.data ? <Link href="login"><FaUser className="text-2xl text-blue-600" /></Link> : <>
                         <div className="avatar">
                             <div className="ring-primary ring-offset-base-100 w-7 rounded-full ring ring-offset-2">
-                                <Image width={7} height={7} src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                <Image width={7} height={7} src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" alt='User' />
                             </div>
                         </div>
                         <button
