@@ -4,10 +4,17 @@ import { NextResponse } from "next/server";
 export async function GET() {
     try {
         const db = await connectDB();
-        const productsCollection = db.collection("products"); // Your collection name
+        const productsCollection = db.collection("products");
         const products = await productsCollection.find({}).toArray();
 
-        return NextResponse.json(products);
+        const response = NextResponse.json(products);
+
+        // Set CORS headers
+        response.headers.set("Access-Control-Allow-Origin", "https://zinan-ndv07tpcs-ashik2765s-projects.vercel.app"); // Your frontend URL
+        response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+        response.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+        return response;
     } catch (error) {
         console.error("Error fetching products:", error);
         return NextResponse.json(
@@ -15,4 +22,15 @@ export async function GET() {
             { status: 500 }
         );
     }
+}
+
+// Optional: Handle preflight requests for POST, PUT, DELETE, etc.
+export async function OPTIONS() {
+    const response = new NextResponse(null, { status: 204 });
+
+    response.headers.set("Access-Control-Allow-Origin", "https://zinan-ndv07tpcs-ashik2765s-projects.vercel.app");
+    response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+    response.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+    return response;
 }
