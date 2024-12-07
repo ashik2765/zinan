@@ -14,26 +14,26 @@ export default function Banner() {
   }, []);
   const banners = [
     {
-      title: "Agar agar",
-      description: "There are many variations of passages of  available, but the majority have suffered alteration in some form",
+      title: "বাখুর স্টিক",
+      description: "মান ও ঘ্রানে ১০০% নিশ্চয়তা পাবেন আমাদের বাখুর স্টিকে!",
       next: "#slide2",
       prev: "#slide4"
     },
     {
-      title: "Affordable Price For Car Servicing",
-      description: "There are many variations of passages of  available, but the majority have suffered alteration in some form",
+      title: "ওউদ ধূপকাঠি বা বখুর স্টিক",
+      description: "বিশুদ্ধ ঘ্রাণ আধ্যাত্মিক প্রশান্তি ঘরের সৌন্দর্য বাড়াতে অনন্য!",
       next: "#slide3",
       prev: "#slide1"
     },
     {
-      title: "Affordable Price For Car Servicing",
-      description: "There are many variations of passages of  available, but the majority have suffered alteration in some form",
+      title: "আতর - খাঁটি সৌরভের স্পর্শ",
+      description: "দীর্ঘস্থায়ী ঘ্রাণ খাঁটি ও অ্যালকোহলমুক্ত প্রতিদিনের ব্যবহার ও উপহার দেওয়ার জন্য আদর্শ",
       next: "#slide4",
       prev: "#slide2"
     },
     {
-      title: "Affordable Price For Car Servicing",
-      description: "There are many variations of passages of  available, but the majority have suffered alteration in some form",
+      title: "এরাবিয়ান মুখাল্লাত রৌজ",
+      description: "যাদের চন্দন, রৌজ ফ্লেভার পছন্দ তাদের জন্য সবচেয়ে বেস্ট একটি আতর। পেইজের কাস্টমার রিভিউ কমেন্ট দেখেন বুঝতে পারবেন।",
       next: "#slide1",
       prev: "#slide3"
     },
