@@ -3,8 +3,11 @@ import SocialLogin from '@/components/shared/SocialLogin'
 import Head from 'next/head'
 import Link from 'next/link'
 import { signIn } from 'next-auth/react'
+import Router from 'next/router'
+import { useRouter } from 'next/navigation'
 
 export default function Page() {
+    const router =useRouter();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -17,6 +20,9 @@ export default function Page() {
             password,
             redirect: false
         })
+        if (res.status === 200) {
+            router.push("/")
+        }
         console.log(res)
     }
 
