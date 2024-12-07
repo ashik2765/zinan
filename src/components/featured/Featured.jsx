@@ -40,9 +40,14 @@ export default function Featured() {
     return (
         <section id="featured" className="py-12">
             <div data-aos="fade-up" className="container mx-auto">
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-                    Featured Products
-                </h2>
+                <div className="text-center">
+                    <h2 className="text-4xl font-bold text-gray-800 mb-6">
+                        Discover Our Exclusive Collection
+                    </h2>
+                    <p className="text-gray-600 max-w-2xl mx-auto">
+                        Explore the best deals on high-quality products tailored just for you. Upgrade your shopping experience with our carefully curated items.
+                    </p>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {featuredProducts.map((product) => (
                         <div

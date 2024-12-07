@@ -15,8 +15,8 @@ export default function NavBar() {
             path: "/shop"
         },
         {
-            title: "Blog",
-            path: "/blog"
+            title: "Dashboard",
+            path: "/dashboard"
         },
         {
             title: "About Us",
