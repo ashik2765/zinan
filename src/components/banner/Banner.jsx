@@ -20,14 +20,14 @@ export default function Banner() {
       prev: "#slide4"
     },
     {
-      title: "ওউদ ধূপকাঠি বা বখুর স্টিক",
-      description: "বিশুদ্ধ ঘ্রাণ আধ্যাত্মিক প্রশান্তি ঘরের সৌন্দর্য বাড়াতে অনন্য!",
+      title: "আতর - খাঁটি সৌরভের স্পর্শ",
+      description: "দীর্ঘস্থায়ী ঘ্রাণ খাঁটি ও অ্যালকোহলমুক্ত প্রতিদিনের ব্যবহার ও উপহার দেওয়ার জন্য আদর্শ  ",
       next: "#slide3",
       prev: "#slide1"
     },
     {
-      title: "আতর - খাঁটি সৌরভের স্পর্শ",
-      description: "দীর্ঘস্থায়ী ঘ্রাণ খাঁটি ও অ্যালকোহলমুক্ত প্রতিদিনের ব্যবহার ও উপহার দেওয়ার জন্য আদর্শ",
+      title: "ওউদ ধূপকাঠি বা বখুর স্টিক",
+      description: "বিশুদ্ধ ঘ্রাণ আধ্যাত্মিক প্রশান্তি ঘরের সৌন্দর্য বাড়াতে অনন্য!",
       next: "#slide4",
       prev: "#slide2"
     },
@@ -57,7 +57,7 @@ export default function Banner() {
                 <div className="flex flex-col md:flex-row mt-5 md:mt-10 pe-5">
                   <button className="btn btn-md btn-primary">Discover More</button>
                   <button className="btn btn-primary btn-outline hidden md:block md:ms-5 mt-2 md:mt-0">
-                    Latest Projects
+                    Latest Products
                   </button>
                 </div>
               </div>
