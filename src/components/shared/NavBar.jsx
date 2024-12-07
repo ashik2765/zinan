@@ -1,10 +1,16 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { IoMdLogOut } from "react-icons/io";
 import { IoIosSearch } from "react-icons/io";
+import { signOut, useSession } from 'next-auth/react';
 
 export default function NavBar() {
+    const session = useSession()
+    console.log(session)
+
     const navItems = [
         {
             title: "Home",
@@ -74,7 +80,23 @@ export default function NavBar() {
                 <div className=' flex items-center space-x-5'>
                     <Link href="/"><FaShoppingCart className="text-2xl text-blue-600" /></Link>
                     <IoIosSearch className="text-2xl text-blue-600" />
-                    <Link href="login"><FaUser className="text-2xl text-blue-600" /></Link>
+                    {!session.data ? <Link href="login"><FaUser className="text-2xl text-blue-600" /></Link> : <>
+                        <div className="avatar">
+                            <div className="ring-primary ring-offset-base-100 w-7 rounded-full ring ring-offset-2">
+                                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                            </div>
+                        </div>
+                        <button
+                            onClick={()=>signOut()}
+                            className="flex items-center space-x-2 bg-transparent border-none cursor-pointer pe-2"
+                            title="Logout"
+                        >
+                            <IoMdLogOut className="text-2xl hover:text-3xl text-red-600 hover:text-red-700" />
+                            <span className="hidden md:block font-semibold text-red-600 hover:text-red-700">
+                                Logout
+                            </span>
+                        </button>
+                    </>}
                 </div>
             </div>
         </div>

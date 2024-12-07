@@ -2,13 +2,22 @@
 import SocialLogin from '@/components/shared/SocialLogin'
 import Head from 'next/head'
 import Link from 'next/link'
-import React from 'react'
+import { signIn } from 'next-auth/react'
 
 export default function Page() {
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        console.log("cliked login button")
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+        const res = await signIn("credentials", {
+            email,
+            password,
+            redirect: false
+        })
+        console.log(res)
     }
 
     return (

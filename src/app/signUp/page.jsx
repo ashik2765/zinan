@@ -6,9 +6,27 @@ import React from 'react'
 
 
 export default function Page() {
-    const handleSignUp = (e) => {
+    const handleSignUp = async (e) => {
         e.preventDefault()
-        console.log("cliked signUp")
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const userInfo = {
+            name,
+            email,
+            password
+        }
+        const res = await fetch('http://localhost:3000/signUp/api', {
+            method: "POST",
+            headers: {
+                "content-type": "application/json"
+            },
+            body: JSON.stringify(userInfo)
+        })
+        if (res.status === 200) {
+            e.target.reset();
+        }
     }
     return (
         <div>
