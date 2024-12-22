@@ -15,7 +15,6 @@ export default function CheckoutPage() {
         address: "",
         phone: "",
     });
-    console.log("from production",id)
 
     useEffect(() => {
         const fetchCartItems = async () => {
