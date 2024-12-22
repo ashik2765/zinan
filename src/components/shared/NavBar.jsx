@@ -80,7 +80,7 @@ export default function NavBar() {
                 <div className=' flex items-center space-x-5'>
                     <Link href="/"><FaShoppingCart className="text-2xl text-blue-600" /></Link>
                     <IoIosSearch className="text-2xl text-blue-600" />
-                    {!session.data ? <Link href="login"><FaUser className="text-2xl text-blue-600" /></Link> : <>
+                    {!session.data ? <Link href="/login"><FaUser className="text-2xl text-blue-600" /></Link> : <>
                         <div className="avatar">
                             <div className="ring-primary ring-offset-base-100 w-7 rounded-full ring ring-offset-2">
                                 <Image width={7} height={7} src="/assets/user/user.jpg" alt='User' />

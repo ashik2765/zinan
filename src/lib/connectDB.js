@@ -3,7 +3,7 @@ import { MongoClient, ServerApiVersion } from "mongodb";
 let db;
 export const connectDB = async () => {
     if (db) return db;
-    const uri = process.env.MONGODB_URI
+    const uri = process.env.NEXT_PUBLIC_MONGODB_URI
     try {
         const client = new MongoClient(uri, {
             serverApi: {

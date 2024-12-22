@@ -19,7 +19,7 @@ export default function Page() {
         }
         try {
             const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"; // Fallback for local development
-            const response = await fetch(`${baseUrl}/api/signUp`, {
+            const response = await fetch(`${baseUrl}/api/auth/signUp`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
