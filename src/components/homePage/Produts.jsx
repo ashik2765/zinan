@@ -2,7 +2,7 @@ import React from 'react';
 import Card from '../shared/Card';
 
 const getProductsData = async () => {
-    const res = await fetch(`${process.env.BASE_URL}/products/api/get-all`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products/api/get-all`)
     const products = res.json()
     return products
 }

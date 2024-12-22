@@ -10,7 +10,7 @@ export const metadata = {
 
 // Fetch product details
 const getProductDetails = async (id) => {
-    const res = await fetch(`${process.env.BASE_URL}/products/api/${id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/products/api/${id}`);
     if (!res.ok) {
         throw new Error('Failed to fetch product details');
     }

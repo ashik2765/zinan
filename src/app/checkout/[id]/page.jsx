@@ -20,7 +20,7 @@ export default function CheckoutPage() {
     useEffect(() => {
         const fetchCartItems = async () => {
             try {
-                const response = await fetch(`${process.env.BASE_URL}/checkout/api/products`);
+                const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/checkout/api/products`);
                 if (response.ok) {
                     const data = await response.json();
 

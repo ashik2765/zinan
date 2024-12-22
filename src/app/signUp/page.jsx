@@ -17,15 +17,26 @@ export default function Page() {
             email,
             password
         }
-        const res = await fetch(`${process.env.BASE_URL}/signUp/api`, {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(userInfo)
-        })
-        if (res.status === 200) {
-            e.target.reset();
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/signUp/api`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userInfo),
+            });
+
+            if (response.ok) { // Check if status is in the range 200-299
+                e.target.reset();
+                console.log("Sign-up successful!");
+            } else {
+                console.error(`Error: ${response.status} - ${response.statusText}`);
+                // Handle specific error cases
+                const errorData = await response.json();
+                console.error("Error details:", errorData);
+            }
+        } catch (error) {
+            console.error("Network or server error:");
         }
     }
     return (
