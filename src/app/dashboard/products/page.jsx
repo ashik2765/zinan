@@ -41,13 +41,10 @@ export default function ProductsPage() {
                                     <div tabIndex={0} role="button" className="btn m-1">Action</div>
                                     <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                                         <li>
-                                            <button
-                                                className="text-green-600 hover:text-green-800 px-2 py-1"
-                                            >
-                                                <Link href="/dashboard/updateData">
-                                                    Edit
-                                                </Link>
-                                            </button>
+                                            <Link className="text-green-600 hover:text-green-800 px-2 py-1" href="/dashboard/updateData">
+
+                                                Edit
+                                            </Link>
                                         </li>
                                         <li>
                                             <button
