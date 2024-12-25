@@ -1,10 +1,10 @@
 // components/ProductForm.js
 import Link from "next/link";
 import { GiReturnArrow } from "react-icons/gi";
-export default function UpdateProduct() {
+export default function ProductForm() {
     return (
         <div className="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
-            <h1 className="text-2xl font-bold mb-4 text-center">Update Product</h1>
+            <h1 className="text-2xl font-bold mb-4 text-center">Add Product</h1>
             <form className="space-y-6">
                 {/* ID */}
                 <div className="flex flex-col">

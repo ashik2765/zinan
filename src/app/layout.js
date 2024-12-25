@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/shared/NavBar";
 import Footer from "@/components/shared/Footer";
 import AuthProvider from "@/auth/AuthProvider";
+import FacebookPixel from "@/components/shared/FacebookPixel";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased  bg-base-100`}
       >
         <AuthProvider>
+          <FacebookPixel /> {/* Include Facebook Pixel */}
           <div className="max-w-7xl mx-auto md:p-4">
             <NavBar />
             {children}

@@ -1,49 +1,26 @@
-"use client";
+import Link from "next/link";
 
-
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-
-export default function Dashboard() {
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!router.isReady) return; // Ensure router is ready
-  }, [router]);
-
-  const handleNavigation = (path) => {
-    router.push(path);
-  };
-
+export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <div className="max-w-4xl w-full bg-white shadow-lg rounded-lg p-6">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">
-          Admin Dashboard
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div
-            className="p-6 bg-blue-500 text-white rounded-lg shadow-md cursor-pointer hover:bg-blue-600"
-            onClick={() => handleNavigation("/dashboard/uploadData")}
-          >
-            <h2 className="text-xl font-semibold text-center">Upload New Data</h2>
-          </div>
-
-          <div
-            className="p-6 bg-yellow-500 text-white rounded-lg shadow-md cursor-pointer hover:bg-yellow-600"
-            onClick={() => handleNavigation("/dashboard/updateData")}
-          >
-            <h2 className="text-xl font-semibold text-center">Update Data</h2>
-          </div>
-
-          <div
-            className="p-6 bg-red-500 text-white rounded-lg shadow-md cursor-pointer hover:bg-red-600"
-            onClick={() => handleNavigation("/dashboard/DeleteData")}
-          >
-            <h2 className="text-xl font-semibold text-center">Delete Data</h2>
-          </div>
-        </div>
+    <div>
+      <h1 className="text-2xl font-bold mb-6">Dashboard</h1>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card title="All Orders" link="/dashboard/orders" />
+        <Card title="All Products" link="/dashboard/products" />
+        <Card title="User List" link="/dashboard/users" />
+        <Card title="Upload A Product" link="/dashboard/uploadProduct" />
       </div>
     </div>
+  );
+}
+
+function Card({ title, link }) {
+  return (
+    <Link href={link}>
+      <div className="p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+        <h2 className="text-lg font-semibold">{title}</h2>
+        <p className="text-sm text-gray-500">Manage {title.toLowerCase()}</p>
+      </div>
+    </Link>
   );
 }
