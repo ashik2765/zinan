@@ -2,6 +2,7 @@ import { connectDB } from "@/lib/connectDB";
 import NextAuth from "next-auth";
 import bcrypt from "bcrypt";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from 'next-auth/providers/google';
 
 
 const handler = NextAuth({
@@ -31,8 +32,17 @@ const handler = NextAuth({
                 }
                 return currentUser;
             }
-        })
+        }),
+        GoogleProvider({
+            clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
+            clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET
+        }),
+        // FacebookProvider({
+        //     clientId: process.env.FACEBOOK_CLIENT_ID,
+        //     clientSecret: process.env.FACEBOOK_CLIENT_SECRET
+        // })
     ],
+    secret: process.env.NEXTAUTH_SECRET,
     callbacks: {},
     pages: {
         signIn: "/login"

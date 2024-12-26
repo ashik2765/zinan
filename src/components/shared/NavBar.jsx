@@ -9,6 +9,7 @@ import { signOut, useSession } from 'next-auth/react';
 
 export default function NavBar() {
     const session = useSession()
+    
 
     const navItems = [
         {

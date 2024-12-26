@@ -28,7 +28,7 @@ export default function UsersPage() {
                     ))}
                 </tbody>
             </table>
-            <div className="flex justify-end items-center pt-10">
+            <div className="flex justify-end items-center pt-10 text-red-600">
                 <Link href="/dashboard">
                     Go Back <span><GiReturnArrow className="text-red-600 text-2xl" /></span>
                 </Link>
