@@ -1,8 +1,8 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Image from "next/image";
 
 export default function Card({ product, animation }) { // Accept animation as a prop
   useEffect(() => {
@@ -42,7 +42,7 @@ export default function Card({ product, animation }) { // Accept animation as a 
       <a href={`/products/${product._id}`}>
         {/* Product Image */}
         <div className="relative h-60">
-          <Image
+          {/* <Image
             src={product.image.startsWith("/")
               ? product.image // Use relative path if it starts with `/`
               : `/assets/products/${product.image}`} // Fallback for dynamic paths
@@ -50,7 +50,11 @@ export default function Card({ product, animation }) { // Accept animation as a 
             width={500}
             height={500}
             className="w-full h-full object-cover"
-          />
+          /> */}
+          <Image src={product?.image} height={500} width={500} alt="image" className="w-full h-full object-cover">
+
+          </Image>
+
           {product.badges?.map((badge, i) => (
             <div
               key={i}

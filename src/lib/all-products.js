@@ -3,7 +3,7 @@ export const products = [
         id: 1,
         name: "ওউদ ধূপকাঠি বা বখুর স্টিক",
         description: "বিশুদ্ধ ঘ্রাণ আধ্যাত্মিক প্রশান্তি ঘরের সৌন্দর্য বাড়াতে অনন্য",
-        image: "/assets/products/bakhura.jpg",
+        image: "https://i.ibb.co/yFJYJcC/mango.jpg",
         price: {
             original: 1950,
             discounted: 1300,
@@ -22,7 +22,7 @@ export const products = [
         id: 2,
         name: "আতর - খাঁটি সৌরভের স্পর্শ",
         description: "দীর্ঘস্থায়ী ঘ্রাণ খাঁটি ও অ্যালকোহলমুক্ত প্রতিদিনের ব্যবহার ও উপহার দেওয়ার জন্য আদর্শ.",
-        image: "/assets/products/bakhuraa.jpg",
+        image: "https://i.ibb.co/82vdGLt/mango4.jpg",
         price: {
             original: 850,
             discounted: 750,
@@ -38,7 +38,7 @@ export const products = [
         id: 3,
         name: "বাখুর স্টিক",
         description: "মান ও ঘ্রানে ১০০%নিশ্চয়তা পাবেন আমাদের বাখুর স্টিকে,তাই জলদি অর্ডার করে ফেলুন",
-        image: "/assets/products/bodyspry.jpg",
+        image: "https://i.ibb.co/SNYP7Jx/mango2.webp",
         price: {
             original: 400,
             discounted: 350,
@@ -51,7 +51,7 @@ export const products = [
         id: 4,
         name: "এরাবিয়ান মুখাল্লাত রৌজ",
         description: "যাদের চন্দন, রৌজ ফ্লেভার পছন্দ তাদের জন্য সবচেয়ে বেস্ট একটি আতর। পেইজের কাস্টমার রিভিউ কমেন্ট দেখেন বুঝতে পারবেন।",
-        image: "/assets/products/perfume.jpg",
+        image: "https://i.ibb.co/r36hh4w/mango5.jpg",
         price: {
             original: 600,
             discounted: 500,
@@ -70,7 +70,7 @@ export const products = [
         id: 5,
         name: "এরাবিয়ান মুখাল্লাত রৌজ - Premium",
         description: "যাদের চন্দন, রৌজ ফ্লেভার পছন্দ তাদের জন্য প্রিমিয়াম মানের আতর।",
-        image: "/assets/products/men-perfume.jpg",
+        image: "https://i.ibb.co/GFpCrv3/mango6.jpg",
         price: {
             original: 750,
             discounted: 650,
