@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <footer className="footer bg-base-200 text-base-content p-10">
             <aside>
-                <Image alt='Logo' src="/assets/logo.svg" height={60} width={60}></Image>
+                <Image alt='Logo' src="/assets/logo.png" height={60} width={60}></Image>
                 <p>
                     SHAJA S OUD
                     <br />

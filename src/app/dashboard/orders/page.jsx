@@ -1,10 +1,20 @@
 import Link from "next/link";
 import { GiReturnArrow } from "react-icons/gi";
-export default function OrdersPage() {
-    const orders = [
-        { id: 1, customer: "John Doe", total: "$100", status: "Pending" },
-        { id: 2, customer: "Jane Smith", total: "$200", status: "Completed" },
-    ];
+
+const getOrdersData = async () => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/orders`)
+    const orders = res.json()
+    return orders
+}
+const OrdersPage = async () => {
+    const ordersData = await getOrdersData();
+    const orders = ordersData.orders
+    console.log("orders from orders", orders)
+    // const orders = [
+    //     { id: 1, customer: "John Doe", total: "$100", status: "Pending" },
+    //     { id: 2, customer: "Jane Smith", total: "$200", status: "Completed" },
+    //     { id: 3, customer: "Jane Smith", total: "$200", status: "Completed" },
+    // ];
 
     return (
         <div>
@@ -20,11 +30,12 @@ export default function OrdersPage() {
                 </thead>
                 <tbody>
                     {orders.map((order) => (
-                        <tr key={order.id} className="border-t">
-                            <td className="px-4 py-2">{order.id}</td>
-                            <td className="px-4 py-2">{order.customer}</td>
-                            <td className="px-4 py-2">{order.total}</td>
-                            <td className="px-4 py-2">{order.status}</td>
+                        <tr key={order?._id} className="border-t">
+                            <td className="px-4 py-2">{order?.id}</td>
+                            <td className="px-4 py-2">{order.customerInfo?.name}</td>
+                            <td className="px-4 py-2">{order?.cartItems[0]?.price?.
+                                discounted}</td>
+                            <td className="px-4 py-2">pending</td>
                         </tr>
                     ))}
                 </tbody>
@@ -37,3 +48,4 @@ export default function OrdersPage() {
         </div>
     );
 }
+export default OrdersPage; 

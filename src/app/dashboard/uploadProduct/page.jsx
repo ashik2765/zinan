@@ -1,11 +1,76 @@
-// components/ProductForm.js
+"use client"
+import { useState } from "react";
 import Link from "next/link";
 import { GiReturnArrow } from "react-icons/gi";
+
 export default function ProductForm() {
+    const [formData, setFormData] = useState({
+        id: "",
+        name: "",
+        description: "",
+        image: "",
+        originalPrice: "",
+        discountedPrice: "",
+        badges: "",
+        availability: "In Stock",
+        actions: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            // Parse JSON fields for badges and actions
+            const badges = JSON.parse(formData.badges || "[]");
+            const actions = JSON.parse(formData.actions || "[]");
+
+            // Construct the final JSON object
+            const productData = {
+                id: Number(formData.id),
+                name: formData.name,
+                description: formData.description,
+                image: formData.image,
+                price: {
+                    original: Number(formData.originalPrice),
+                    discounted: Number(formData.discountedPrice),
+                },
+                badges,
+                availability: formData.availability,
+                actions,
+            };
+
+            // Send the JSON to your API
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/uploadAdata`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(productData),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                alert("Product added successfully!");
+                console.log("Response:", result);
+            } else {
+                alert("Failed to add product.");
+                console.error("Error:", result);
+            }
+        } catch (error) {
+            alert("Error parsing JSON fields. Please check your input.");
+            console.error("Error:", error);
+        }
+    };
+
     return (
         <div className="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-md">
             <h1 className="text-2xl font-bold mb-4 text-center">Add Product</h1>
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
                 {/* ID */}
                 <div className="flex flex-col">
                     <label htmlFor="id" className="font-medium text-gray-700">
@@ -15,6 +80,8 @@ export default function ProductForm() {
                         type="number"
                         id="id"
                         name="id"
+                        value={formData.id}
+                        onChange={handleChange}
                         className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
                         placeholder="Enter Product ID"
                     />
@@ -29,6 +96,8 @@ export default function ProductForm() {
                         type="text"
                         id="name"
                         name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
                         placeholder="Enter Product Name"
                     />
@@ -42,6 +111,8 @@ export default function ProductForm() {
                     <textarea
                         id="description"
                         name="description"
+                        value={formData.description}
+                        onChange={handleChange}
                         className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
                         placeholder="Enter Description"
                         rows="3"
@@ -57,6 +128,8 @@ export default function ProductForm() {
                         type="text"
                         id="image"
                         name="image"
+                        value={formData.image}
+                        onChange={handleChange}
                         className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
                         placeholder="Enter Image Path"
                     />
@@ -72,6 +145,8 @@ export default function ProductForm() {
                             type="number"
                             id="originalPrice"
                             name="originalPrice"
+                            value={formData.originalPrice}
+                            onChange={handleChange}
                             className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
                             placeholder="Enter Original Price"
                         />
@@ -84,6 +159,8 @@ export default function ProductForm() {
                             type="number"
                             id="discountedPrice"
                             name="discountedPrice"
+                            value={formData.discountedPrice}
+                            onChange={handleChange}
                             className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
                             placeholder="Enter Discounted Price"
                         />
@@ -98,6 +175,8 @@ export default function ProductForm() {
                     <textarea
                         id="badges"
                         name="badges"
+                        value={formData.badges}
+                        onChange={handleChange}
                         className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
                         placeholder='Example: [{"type":"sale","label":"SALE","color":"green"}]'
                         rows="3"
@@ -112,6 +191,8 @@ export default function ProductForm() {
                     <select
                         id="availability"
                         name="availability"
+                        value={formData.availability}
+                        onChange={handleChange}
                         className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
                     >
                         <option value="In Stock">In Stock</option>
@@ -127,6 +208,8 @@ export default function ProductForm() {
                     <textarea
                         id="actions"
                         name="actions"
+                        value={formData.actions}
+                        onChange={handleChange}
                         className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
                         placeholder='Example: [{"label":"Add to Cart","color":"blue","url":"/cart"}]'
                         rows="3"
@@ -149,4 +232,3 @@ export default function ProductForm() {
         </div>
     );
 }
-

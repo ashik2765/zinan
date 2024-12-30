@@ -10,21 +10,21 @@ export default function Featured() {
             id: 1,
             name: "Wireless Earbuds",
             price: "$59.99",
-            image: "/assets/products/product2.jpg", // Replace with your image path
+            image: "/assets/featured/bakhura.jpg", // Replace with your image path
             description: "Crystal-clear sound with noise cancellation.",
         },
         {
             id: 2,
             name: "Smartwatch",
             price: "$129.99",
-            image: "/assets/products/product2.jpg", // Replace with your image path
+            image: "/assets/featured/bakhuraa.jpg", // Replace with your image path
             description: "Track your fitness and stay connected on the go.",
         },
         {
             id: 3,
             name: "Gaming Mouse",
             price: "$49.99",
-            image: "/assets/products/product2.jpg", // Replace with your image path
+            image: "/assets/featured/sweetHome.jpg", // Replace with your image path
             description: "High precision and ergonomic design for gamers.",
         },
     ];

@@ -9,8 +9,6 @@ import { signOut, useSession } from 'next-auth/react';
 
 export default function NavBar() {
     const session = useSession()
-    
-
     const navItems = [
         {
             title: "Home",
@@ -61,7 +59,7 @@ export default function NavBar() {
                 </div>
                 <div>
                     <Link href={"/"}>
-                        <Image alt='logo' src="/assets/logo.svg" height={60} width={60}></Image>
+                        <Image alt='logo' src="/assets/logo.png" height={60} width={60}></Image>
                     </Link>
                 </div>
             </div>

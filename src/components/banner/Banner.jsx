@@ -50,7 +50,7 @@ export default function Banner() {
             id={`slide${index + 1}`}
             className="carousel-item relative w-full h-[60vh] md:h-[80vh] lg:h-[90vh] bg-top bg-no-repeat bg-cover rounded">
 
-            <div className="w-full h-full flex items-center pl-4 md:pl-10 lg:pl-36">
+            {/* <div className="w-full h-full flex items-center pl-4 md:pl-10 lg:pl-36">
               <div className="text-white">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">{banner.title}</h1>
                 <p className="text-sm md:text-base lg:text-lg">{banner.description}</p>
@@ -61,7 +61,7 @@ export default function Banner() {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="absolute flex justify-between mt-40 lg:mt-0 transform right-4 bottom-4 md:right-12 md:bottom-12 space-x-5 z-10">
               <a href={banner.prev} className="btn btn-circle btn-primary btn-outline">❮</a>
