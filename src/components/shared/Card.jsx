@@ -33,7 +33,7 @@ export default function Card({ product, animation }) { // Accept animation as a 
   //       console.log("Unknown action", action);
   //   }
   // };
-
+console.log("get from card", product)
   return (
     <div
       data-aos={animation} // Apply the animation prop dynamically

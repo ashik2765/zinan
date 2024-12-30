@@ -68,35 +68,16 @@ export const products = [
     },
     {
         id: 5,
-        name: "এরাবিয়ান মুখাল্লাত রৌজ",
-        description: "যাদের চন্দন, রৌজ ফ্লেভার পছন্দ তাদের জন্য সবচেয়ে বেস্ট একটি আতর। পেইজের কাস্টমার রিভিউ কমেন্ট দেখেন বুঝতে পারবেন।",
+        name: "এরাবিয়ান মুখাল্লাত রৌজ - Premium",
+        description: "যাদের চন্দন, রৌজ ফ্লেভার পছন্দ তাদের জন্য প্রিমিয়াম মানের আতর।",
         image: "/assets/products/men-perfume.jpg",
         price: {
-            original: 600,
-            discounted: 500,
+            original: 750,
+            discounted: 650,
         },
         badges: [
             { type: "hot", label: "HOT", color: "red" },
-            { type: "eco-friendly", label: "Eco Friendly", color: "green" },
-        ],
-        availability: "In Stock",
-        actions: [
-            { label: "Add to Cart", color: "blue", url: "/cart" },
-            { label: "Buy Now", color: "blue", url: "/checkout" },
-        ],
-    },
-    {
-        id: 6,
-        name: "এরাবিয়ান মুখাল্লাত রৌজ",
-        description: "যাদের চন্দন, রৌজ ফ্লেভার পছন্দ তাদের জন্য সবচেয়ে বেস্ট একটি আতর। পেইজের কাস্টমার রিভিউ কমেন্ট দেখেন বুঝতে পারবেন।",
-        image: "/assets/products/bakhuraa.jpg",
-        price: {
-            original: 600,
-            discounted: 500,
-        },
-        badges: [
-            { type: "hot", label: "HOT", color: "red" },
-            { type: "eco-friendly", label: "Eco Friendly", color: "green" },
+            { type: "premium", label: "Premium", color: "gold" },
         ],
         availability: "In Stock",
         actions: [

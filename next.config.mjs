@@ -4,7 +4,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'ibb.co.com',
+                hostname: 'i.ibb.co',
                 port: '',
                 pathname: '**',
             },
@@ -13,3 +13,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
