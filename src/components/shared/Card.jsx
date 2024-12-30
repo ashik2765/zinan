@@ -33,7 +33,7 @@ export default function Card({ product, animation }) { // Accept animation as a 
   //       console.log("Unknown action", action);
   //   }
   // };
-console.log("get from card", product)
+  console.log("get from card", product)
   return (
     <div
       data-aos={animation} // Apply the animation prop dynamically
@@ -43,7 +43,9 @@ console.log("get from card", product)
         {/* Product Image */}
         <div className="relative h-60">
           <Image
-            src={product.image} // Dynamically set product image
+            src={product.image.startsWith("/")
+              ? product.image // Use relative path if it starts with `/`
+              : `/assets/products/${product.image}`} // Fallback for dynamic paths
             alt={product.name}
             width={500}
             height={500}
