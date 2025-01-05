@@ -168,13 +168,13 @@ export default function CheckoutPage() {
                                 className="flex justify-between border-b pb-2 last:border-none"
                             >
                                 <span>{item.name} (x{item.quantity})</span>
-                                <span>${item?.price?.discounted * item.quantity}</span>
+                                <span>৳ {item?.price?.discounted * item.quantity}</span>
                             </li>
                         ))}
                     </ul>
                     <div className="mt-4 border-t pt-4 flex justify-between font-semibold">
                         <span>Total:</span>
-                        <span>${calculateTotal()}</span>
+                        <span>৳ {calculateTotal()}</span>
                     </div>
                 </div>
             </div>

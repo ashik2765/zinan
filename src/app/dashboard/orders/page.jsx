@@ -17,46 +17,86 @@ const OrdersPage = async () => {
                 </div>
             );
         }
-
         const ordersData = await res.json();
         const orders = ordersData.orders || [];
-
+        console.log(orders)
         return (
-            <div>
-                <h1 className="text-2xl font-bold mb-6">All Orders</h1>
-                <table className="w-full border-collapse bg-white rounded-lg shadow-md">
-                    <thead className="bg-gray-200">
-                        <tr>
-                            <th className="px-4 py-2 text-left">Order ID</th>
-                            <th className="px-4 py-2 text-left">Customer</th>
-                            <th className="px-4 py-2 text-left">Total</th>
-                            <th className="px-4 py-2 text-left">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <div className="p-4">
+                <h1 className="text-2xl font-bold mb-6 text-center">All Orders</h1>
+                {/* Wrapper for responsive behavior */}
+                <div className="overflow-x-auto">
+                    {/* Table for larger screens */}
+                    <table className="hidden md:table w-full border-collapse bg-white rounded-lg shadow-md">
+                        <thead className="bg-gray-200">
+                            <tr>
+                                <th className="px-4 py-2 text-left">Product Details</th>
+                                <th className="px-4 py-2 text-left">Customer Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {orders.length > 0 ? (
+                                orders.map((order) => (
+                                    <tr key={order?._id} className="border-t">
+                                        <td className="px-4 py-2">
+                                            {order?.id}
+                                            <br />
+                                            {order?.cartItems[0]?.name}
+                                            <br />
+                                            <span>Price:</span> {order?.cartItems[0]?.price?.discounted}
+                                        </td>
+                                        <td className="px-4 py-2">
+                                            <Link href="/">
+                                                <span>Name:</span> {order.customerInfo?.name}
+                                                <br />
+                                                <span>Email:</span> {order.customerInfo?.email}
+                                                <br />
+                                                <span>Phone:</span> {order.customerInfo?.phone}
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="2" className="px-4 py-2 text-center">
+                                        No orders available
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+
+                    {/* Card layout for smaller screens */}
+                    <div className="md:hidden space-y-4">
                         {orders.length > 0 ? (
                             orders.map((order) => (
-                                <tr key={order?._id} className="border-t">
-                                    <td className="px-4 py-2">{order?.id}</td>
-                                    <td className="px-4 py-2">{order.customerInfo?.name}</td>
-                                    <td className="px-4 py-2">
-                                        {order?.cartItems[0]?.price?.discounted}
-                                    </td>
-                                    <td className="px-4 py-2">Pending</td>
-                                </tr>
+                                <div
+                                    key={order?._id}
+                                    className="border rounded-lg bg-white p-4 shadow-md"
+                                >
+                                    <div className="mb-2">
+                                        <h2 className="font-bold">Product Details:</h2>
+                                        <p>Order ID: {order?.id}</p>
+                                        <p>Product Name: {order?.cartItems[0]?.name}</p>
+                                        <p>Price: {order?.cartItems[0]?.price?.discounted}</p>
+                                    </div>
+                                    <div>
+                                        <h2 className="font-bold">Customer Details:</h2>
+                                        <p>Name: {order.customerInfo?.name}</p>
+                                        <p>Email: {order.customerInfo?.email}</p>
+                                        <p>Phone: {order.customerInfo?.phone}</p>
+                                    </div>
+                                </div>
                             ))
                         ) : (
-                            <tr>
-                                <td colSpan="4" className="px-4 py-2 text-center">
-                                    No orders available
-                                </td>
-                            </tr>
+                            <p className="text-center text-gray-500">No orders available</p>
                         )}
-                    </tbody>
-                </table>
+                    </div>
+                </div>
+
+                {/* Go Back Link */}
                 <div className="flex justify-end items-center pt-10 text-red-600">
-                    <Link href="/dashboard">
-                        Go Back <span><GiReturnArrow className="text-red-600 text-2xl" /></span>
+                    <Link href="/dashboard" className="flex items-center">
+                        Go Back <GiReturnArrow className="text-red-600 text-2xl ml-1" />
                     </Link>
                 </div>
             </div>

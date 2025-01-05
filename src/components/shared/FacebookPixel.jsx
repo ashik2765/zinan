@@ -1,11 +1,11 @@
-"use client"; // Mark this as a client component
+"use client"; // Ensure this is a client-side component
 
 import { useEffect } from "react";
 
-const FB_PIXEL_ID = "YOUR_PIXEL_ID"; // Replace with your Pixel ID
+const FB_PIXEL_ID = "565553649536923"; // Your Pixel ID
 
 const initFacebookPixel = () => {
-  if (!window.fbq) {
+  if (typeof window !== "undefined" && !window.fbq) {
     (function (f, b, e, v, n, t, s) {
       if (f.fbq) return;
       n = f.fbq = function () {
@@ -23,12 +23,8 @@ const initFacebookPixel = () => {
       t.src = v;
       s = b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t, s);
-    })(
-      window,
-      document,
-      "script",
-      "https://connect.facebook.net/en_US/fbevents.js"
-    );
+    })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+
     window.fbq("init", FB_PIXEL_ID);
     window.fbq("track", "PageView");
   }
