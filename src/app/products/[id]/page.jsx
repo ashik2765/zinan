@@ -71,10 +71,7 @@ const DetailsPage = async ({ params }) => {
                             </div>
                         ))}
                     </div>
-
-                    {/* <Image src="/assets/products/product4.jpg" alt="Mechanic" width={400} height={400} className="rounded-lg mt-8" /> */}
                 </div>
-
                 {/* Right Sidebar */}
                 <aside className="space-y-6">
                     <div className="bg-gray-100 p-6 rounded-lg">
