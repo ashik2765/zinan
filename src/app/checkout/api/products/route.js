@@ -28,7 +28,7 @@ export async function GET() {
 export async function OPTIONS() {
     const response = new NextResponse(null, { status: 204 });
 
-    response.headers.set("Access-Control-Allow-Origin", "https://zinan-ndv07tpcs-ashik2765s-projects.vercel.app");
+    response.headers.set("Access-Control-Allow-Origin", "https://www.shajaoud.com");
     response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     response.headers.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
