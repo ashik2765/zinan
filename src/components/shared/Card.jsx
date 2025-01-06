@@ -50,7 +50,7 @@ export default function Card({ product, animation }) { // Accept animation as a 
             height={500}
             className="w-full h-full object-cover"
           /> */}
-          <Image src={product?.image} height={500} width={500} alt="image" className="w-full h-full object-cover" unoptimized>
+          <Image src={product?.image} height={500} width={500} alt="image" className="w-full h-full object-cover">
           </Image>
 
           {product.badges?.map((badge, i) => (
