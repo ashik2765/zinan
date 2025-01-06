@@ -15,7 +15,7 @@ export default function NavBar() {
         { title: "Home", path: "/" },
         { title: "Shop", path: "/shop" },
         ...(session?.user?.role === "admin" ? [{ title: "Dashboard", path: "/dashboard" }] : []),
-        { title: "About Us", path: "/about" },
+        { title: "About Us", path: "/AboutUs" },
     ];
 
     return (
@@ -53,7 +53,7 @@ export default function NavBar() {
                 </div>
                 <div>
                     <Link href={"/"}>
-                        <Image alt="logo" src="/assets/logo.png" height={60} width={60}></Image>
+                        <Image alt="logo" src="/assets/logo.png" height={60} width={60} priority></Image>
                     </Link>
                 </div>
             </div>

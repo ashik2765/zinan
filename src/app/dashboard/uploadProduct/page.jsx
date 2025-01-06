@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { GiReturnArrow } from "react-icons/gi";
+const imageHostingKey = "50f7fe249836d6c3032146e0eb74aaa8"; // Replace with your API key
+const imageHostingApi = `https://api.imgbb.com/1/upload?key=${imageHostingKey}`;
 
 export default function ProductForm() {
     const [formData, setFormData] = useState({
@@ -25,6 +27,22 @@ export default function ProductForm() {
         e.preventDefault();
 
         try {
+            // Upload image to ImageBB
+            const formDataForImage = new FormData();
+            formDataForImage.append("image", formData.image);
+
+            const imageResponse = await fetch(imageHostingApi, {
+                method: "POST",
+                body: formDataForImage,
+            });
+
+            const imageResult = await imageResponse.json();
+            if (!imageResponse.ok) {
+                throw new Error("Image upload failed");
+            }
+
+            // Use the uploaded image URL
+            const uploadedImageUrl = imageResult.data.url;
             // Parse JSON fields for badges and actions
             const badges = JSON.parse(formData.badges || "[]");
             const actions = JSON.parse(formData.actions || "[]");
@@ -34,7 +52,7 @@ export default function ProductForm() {
                 id: Number(formData.id),
                 name: formData.name,
                 description: formData.description,
-                image: formData.image,
+                image: uploadedImageUrl,
                 price: {
                     original: Number(formData.originalPrice),
                     discounted: Number(formData.discountedPrice),
@@ -122,16 +140,14 @@ export default function ProductForm() {
                 {/* Image */}
                 <div className="flex flex-col">
                     <label htmlFor="image" className="font-medium text-gray-700">
-                        Image URL
+                        Image file
                     </label>
                     <input
-                        type="text"
+                        type="file"
                         id="image"
                         name="image"
-                        value={formData.image}
-                        onChange={handleChange}
+                        onChange={(e) => setFormData({ ...formData, image: e.target.files[0] })}
                         className="border rounded-lg p-2 focus:outline-none focus:ring focus:ring-blue-200"
-                        placeholder="Enter Image Path"
                     />
                 </div>
 

@@ -33,7 +33,6 @@ export default function Card({ product, animation }) { // Accept animation as a 
   //       console.log("Unknown action", action);
   //   }
   // };
-  console.log("get from card", product)
   return (
     <div
       data-aos={animation} // Apply the animation prop dynamically
@@ -52,7 +51,6 @@ export default function Card({ product, animation }) { // Accept animation as a 
             className="w-full h-full object-cover"
           /> */}
           <Image src={product?.image} height={500} width={500} alt="image" className="w-full h-full object-cover">
-
           </Image>
 
           {product.badges?.map((badge, i) => (
