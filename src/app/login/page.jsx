@@ -3,7 +3,6 @@ import SocialLogin from '@/components/shared/SocialLogin'
 import Head from 'next/head'
 import Link from 'next/link'
 import { signIn } from 'next-auth/react'
-import Router from 'next/router'
 import { useRouter } from 'next/navigation'
 
 export default function Page() {

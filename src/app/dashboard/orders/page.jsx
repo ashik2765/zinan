@@ -45,13 +45,13 @@ const OrdersPage = async () => {
                                             <span>Price:</span> {order?.cartItems[0]?.price?.discounted}
                                         </td>
                                         <td className="px-4 py-2">
-                                            <Link href="/">
+                                            
                                                 <span>Name:</span> {order.customerInfo?.name}
                                                 <br />
                                                 <span>Email:</span> {order.customerInfo?.email}
                                                 <br />
                                                 <span>Phone:</span> {order.customerInfo?.phone}
-                                            </Link>
+                                            
                                         </td>
                                     </tr>
                                 ))
@@ -92,7 +92,6 @@ const OrdersPage = async () => {
                         )}
                     </div>
                 </div>
-
                 {/* Go Back Link */}
                 <div className="flex justify-end items-center pt-10 text-red-600">
                     <Link href="/dashboard" className="flex items-center">
