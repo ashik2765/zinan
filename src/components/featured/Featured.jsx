@@ -8,24 +8,24 @@ export default function Featured() {
     const featuredProducts = [
         {
             id: 1,
-            name: "Wireless Earbuds",
-            price: "$59.99",
+            name: "বাখুর বক্স",
+            price: "৳ 450",
             image: "/assets/featured/bakhura.jpg", // Replace with your image path
             description: "Crystal-clear sound with noise cancellation.",
         },
         {
             id: 2,
-            name: "Smartwatch",
-            price: "$129.99",
+            name: "বাখুর স্টিক",
+            price: "৳ 160",
             image: "/assets/featured/bakhuraa.jpg", // Replace with your image path
-            description: "Track your fitness and stay connected on the go.",
+            description: "মান ও ঘ্রানে ১০০%নিশ্চয়তা পাবেন আমাদের বাখুর স্টিকে",
         },
         {
             id: 3,
-            name: "Gaming Mouse",
-            price: "$49.99",
+            name: "সাজাউধ",
+            price: "৳ 450",
             image: "/assets/featured/sweetHome.jpg", // Replace with your image path
-            description: "High precision and ergonomic design for gamers.",
+            description: "বিশুদ্ধ ঘ্রাণ আধ্যাত্মিক প্রশান্তি ঘরের সৌন্দর্য বাড়াতে অনন্য",
         },
     ];
     useEffect(() => {
@@ -58,7 +58,7 @@ export default function Featured() {
                                 src={product.image}
                                 alt={product.name}
                                 width={400}
-                                height={40}
+                                height={300} // Adjust to desired proportional height
                                 className="object-cover rounded-md mb-4"
                             />
                             <h3 className="text-lg font-semibold text-gray-700 mb-2">
