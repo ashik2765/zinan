@@ -11,7 +11,7 @@ export default function HomePage() {
       <Banner></Banner>
       <Products></Products>
       <Featured></Featured>
-      <Review></Review>
+      {/* <Review></Review> */}
     </div>
   )
 }
